@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameChat</title>
+  <link rel="stylesheet" href="./estilo-chat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- BARRA LATERAL FIXA -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <button class="nav-btn active" data-tab="tab-friends" title="Amigos">
+        <i class="fa-solid fa-user"></i>
+      </button>
+      <button class="nav-btn" data-tab="tab-search" title="Buscar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="nav-btn" data-tab="tab-groups" title="Grupos">
+        <i class="fa-solid fa-users"></i>
+      </button>
+      <button class="nav-btn" data-tab="tab-notifications" title="Notificações">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="./index.html?view=home" class="btn-back" title="Voltar">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL (MUDANÇA DE TELAS) -->
+  <main class="chat-container">
+
+    <!-- TELA INICIAL (GAMECHAT DEFAULT) -->
+    <section class="chat-tab active" id="tab-welcome">
+      <div class="welcome-screen">
+        <h1>gamechat</h1>
+        <p>selecione uma das opções ao lado</p>
+      </div>
+    </section>
+
+    <!-- TELA: AMIGOS -->
+    <section class="chat-tab hidden" id="tab-friends">
+      <div class="header-section">
+        <i class="fa-solid fa-circle-user avatar-large"></i>
+        <div>
+          <h2>gamechat</h2>
+          <span>amigos</span>
+        </div>
+      </div>
+      <ul class="item-list">
+        <li class="chat-item" data-chat="exemplo01">
+          <i class="fa-solid fa-circle font-bullet"></i>
+          <span class="name">exemplo01</span>
+          <span class="subtext">amigo</span>
+        </li>
+        <li class="chat-item" data-chat="exemplo02">
+          <i class="fa-solid fa-circle font-bullet"></i>
+          <span class="name">exemplo 02</span>
+          <span class="subtext">amigo</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TELA: BUSCAR USUÁRIO -->
+    <section class="chat-tab hidden" id="tab-search">
+      <div class="header-section">
+        <i class="fa-solid fa-magnifying-glass avatar-large"></i>
+        <h2>buscar por usuario 'email'</h2>
+      </div>
+      <div class="search-panel">
+        <div class="results-box">
+          <p>ex1 enviar convite para criar chat</p>
+          <p>ex2 enviar convite para criar chat</p>
+        </div>
+        <div class="input-send-bar">
+          <input type="email" placeholder="exemplo1@gmail.com">
+          <button class="btn-send-action">enviar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA: GRUPOS -->
+    <section class="chat-tab hidden" id="tab-groups">
+      <div class="header-section">
+        <i class="fa-solid fa-users avatar-large"></i>
+        <div>
+          <h2>gamechat</h2>
+          <span>grupos</span>
+        </div>
+      </div>
+      <ul class="item-list">
+        <li class="chat-item" data-group="grupo1">
+          <i class="fa-solid fa-circle font-bullet"></i>
+          <span class="name">exemplo01</span>
+          <span class="subtext">grupo 'exemplo de nome 1'</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TELA: NOTIFICAÇÕES / CAIXA DE CONVITES -->
+    <section class="chat-tab hidden" id="tab-notifications">
+      <div class="header-section">
+        <i class="fa-solid fa-envelope avatar-large"></i>
+        <h2>notificações</h2>
+      </div>
+      <div class="notification-panel">
+        <p>convite para chat</p>
+        <p>convite para grupo</p>
+      </div>
+    </section>
+
+    <!-- TELA DE CHAT ATIVO (SALA DE MENSAGENS) -->
+    <section class="chat-tab hidden" id="tab-room">
+      <div class="header-section">
+        <i class="fa-solid fa-circle-user avatar-large"></i>
+        <h2 id="room-title">exemplo01 amigo</h2>
+      </div>
+      <div class="messages-area">
+        <div class="msg msg-received">blabla</div>
+        <div class="msg msg-received">hhahah</div>
+        <div class="msg msg-sent">hskxakk</div>
+      </div>
+      <div class="input-send-bar">
+        <input type="text" placeholder="Digite uma mensagem...">
+        <button class="btn-send-action">enviar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./chat.js"></script>
+</body>
+</html>
